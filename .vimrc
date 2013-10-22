@@ -1,6 +1,18 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 
+" Setting up Vundle - the vim plugin bundler
+    let iCanHazVundle=1
+    let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+    if !filereadable(vundle_readme)
+       echo "Installing Vundle.."
+       echo ""
+       silent !mkdir -p ~/.vim/bundle
+       silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+       let iCanHazVundle=0
+    endif
+ Setting up Vundle - the vim plugin bundler end
+
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -30,6 +42,13 @@ Bundle "tomasr/molokai"
 Bundle "altercation/vim-colors-solarized"
 Bundle 'nono/vim-handlebars'
 au BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=handlebars
+
+
+    if iCanHazVundle == 0
+        echo "Installing Bundles, please ignore key map error messages"
+        echo ""
+        :BundleInstall
+    endif
 
 set encoding=utf8
 filetype plugin indent on     " required!
