@@ -19,6 +19,7 @@ Bundle 'gmarik/vundle'
 
 " Bundles :
 Bundle "scrooloose/nerdtree"
+let g:NERDTreeDirArrows=0
 Bundle "scrooloose/syntastic"
 let g:syntastic_javascript_checkers = ['jslint']
 Bundle "lukerandall/haskellmode-vim"
