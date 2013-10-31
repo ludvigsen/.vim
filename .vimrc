@@ -30,6 +30,7 @@ Bundle "eagletmt/ghcmod-vim"
 Bundle "tomasr/molokai"
 Bundle "altercation/vim-colors-solarized"
 Bundle 'nono/vim-handlebars'
+Bundle "scrooloose/nerdcommenter"
 au BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=handlebars
 
 set encoding=utf8
