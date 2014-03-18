@@ -36,9 +36,6 @@ Bundle "tpope/vim-classpath"
 Bundle "guns/vim-clojure-static"
 au BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=handlebars
 
-"let vimclojure#WantNailgun = 1
-"let vimclojure#NailgunClient = "/home/marius/vimclojure/client/ng"
-
 set encoding=utf8
 filetype plugin indent on     " required!
 
