@@ -35,6 +35,7 @@ Bundle "scrooloose/nerdcommenter"
 Bundle "digitaltoad/vim-jade"
 Bundle "Shougo/unite.vim"
 Bundle "justinmk/vim-sneak"
+Bundle "tpope/vim-fugitive"
 
 let g:sneak#streak = 1
 
