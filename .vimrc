@@ -20,6 +20,7 @@ Bundle 'gmarik/vundle'
 " Bundles :
 Bundle "scrooloose/nerdtree"
 let g:NERDTreeDirArrows=0
+nnoremap 99 :NERDTreeToggle<CR>
 Bundle "scrooloose/syntastic"
 let g:syntastic_javascript_checkers = ['jslint']
 Bundle "lukerandall/haskellmode-vim"
@@ -35,6 +36,12 @@ Bundle "tpope/vim-fireplace"
 Bundle "tpope/vim-classpath"
 Bundle "guns/vim-clojure-static"
 Bundle "scrooloose/nerdcommenter"
+Bundle "digitaltoad/vim-jade"
+Bundle "Shougo/unite.vim"
+Bundle "justinmk/vim-sneak"
+Bundle "tpope/vim-fugitive"
+
+let g:sneak#streak = 1
 
 au BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=handlebars
 
@@ -45,7 +52,7 @@ syntax on
 
 set number
 
-nmap <silent> 99 :NERDTreeToggle<CR>  
+nmap <silent> e9 :NERDTreeToggle<CR>  
 let mapleader = ","
 
 " No tabs
@@ -85,3 +92,14 @@ map <leader>y "*y
 " Paste from unnamed register and fix indentation
 nmap <leader>p pV`]=
 
+
+" Unite
+let g:unite_source_history_yank_enable = 1
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+nnoremap <leader>t :<C-u>Unite -no-split -buffer-name=files   -start-insert file<cr>**/
+nnoremap <leader>f :<C-u>Unite -no-split -buffer-name=files   -start-insert file<cr>
+nnoremap <leader>r :<C-u>Unite -no-split -buffer-name=mru     -start-insert file_mru<cr>
+nnoremap <leader>o :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
+nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank    history/yank<cr>
+nnoremap <leader>e :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr>
+nnoremap <leader>g :<C-u>Unite -no-split grep:.<cr>
