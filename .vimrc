@@ -34,6 +34,8 @@ Bundle "kingbin/vim-arduino"
 Bundle "tpope/vim-fireplace"
 Bundle "tpope/vim-classpath"
 Bundle "guns/vim-clojure-static"
+Bundle "scrooloose/nerdcommenter"
+
 au BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=handlebars
 
 set encoding=utf8
