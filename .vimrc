@@ -40,6 +40,12 @@ Bundle "digitaltoad/vim-jade"
 Bundle "Shougo/unite.vim"
 Bundle "justinmk/vim-sneak"
 Bundle "tpope/vim-fugitive"
+Bundle "terryma/vim-expand-region"
+Bundle "mileszs/ack.vim"
+Bundle "bling/vim-airline"
+Bundle "Valloric/YouCompleteMe"
+Bundle "Valloric/YouCompleteMe"
+Bundle "kien/ctrlp.vim"
 
 let g:sneak#streak = 1
 
@@ -53,7 +59,9 @@ syntax on
 set number
 
 nmap <silent> e9 :NERDTreeToggle<CR>  
-let mapleader = ","
+"let mapleader = ","
+let mapleader = "\<Space>"
+
 
 " No tabs
 set smartindent
@@ -94,12 +102,32 @@ nmap <leader>p pV`]=
 
 
 " Unite
-let g:unite_source_history_yank_enable = 1
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-nnoremap <leader>t :<C-u>Unite -no-split -buffer-name=files   -start-insert file<cr>**/
-nnoremap <leader>f :<C-u>Unite -no-split -buffer-name=files   -start-insert file<cr>
-nnoremap <leader>r :<C-u>Unite -no-split -buffer-name=mru     -start-insert file_mru<cr>
-nnoremap <leader>o :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
-nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank    history/yank<cr>
-nnoremap <leader>e :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr>
-nnoremap <leader>g :<C-u>Unite -no-split grep:.<cr>
+"let g:unite_source_history_yank_enable = 1
+"call unite#filters#matcher_default#use(['matcher_fuzzy'])
+"nnoremap <leader>t :<C-u>Unite -no-split -buffer-name=files   -start-insert file<cr>**/
+"nnoremap <leader>f :<C-u>Unite -no-split -buffer-name=files   -start-insert file<cr>
+"nnoremap <leader>r :<C-u>Unite -no-split -buffer-name=mru     -start-insert file_mru<cr>
+"nnoremap <leader>o :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
+"nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank    history/yank<cr>
+"nnoremap <leader>e :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr>
+"nnoremap <leader>g :<C-u>Unite -no-split grep:.<cr>
+
+
+nnorema <Leader>o :CtrlP<CR>
+nnoremap <Leader>w :w<CR>
+nmap <Leader><Leader> V
+
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+
+vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
+    \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
+omap s :normal vs<CR>
+
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+let g:ctrlp_use_caching = 0
+
+let g:airline_theme='powerlineish'
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline_section_z=''
