@@ -44,8 +44,10 @@ Bundle "terryma/vim-expand-region"
 Bundle "mileszs/ack.vim"
 Bundle "bling/vim-airline"
 Bundle "Valloric/YouCompleteMe"
-Bundle "Valloric/YouCompleteMe"
 Bundle "kien/ctrlp.vim"
+Bundle "jpalardy/vim-slime"
+
+let g:slime_target = "tmux"
 
 let g:sneak#streak = 1
 
@@ -113,6 +115,7 @@ nmap <leader>p pV`]=
 "nnoremap <leader>g :<C-u>Unite -no-split grep:.<cr>
 
 
+nnorema <Leader>e :CtrlPBuffer<CR>
 nnorema <Leader>o :CtrlP<CR>
 nnoremap <Leader>w :w<CR>
 nmap <Leader><Leader> V
