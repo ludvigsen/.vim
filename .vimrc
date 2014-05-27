@@ -45,9 +45,6 @@ Bundle "mileszs/ack.vim"
 Bundle "bling/vim-airline"
 Bundle "Valloric/YouCompleteMe"
 Bundle "kien/ctrlp.vim"
-Bundle "jpalardy/vim-slime"
-
-let g:slime_target = "tmux"
 
 let g:sneak#streak = 1
 
@@ -113,12 +110,22 @@ nmap <leader>p pV`]=
 "nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank    history/yank<cr>
 "nnoremap <leader>e :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr>
 "nnoremap <leader>g :<C-u>Unite -no-split grep:.<cr>
+unmap <C-p>
+nmap <C-n> :bnext<cr>
+nmap <C-p> :bprevious<cr>
 
-
-nnorema <Leader>e :CtrlPBuffer<CR>
 nnorema <Leader>o :CtrlP<CR>
+nnorema <Leader>e :CtrlPBuffer<CR>
+nnorema <Leader>m :CtrlPMixed<CR>
 nnoremap <Leader>w :w<CR>
 nmap <Leader><Leader> V
+"let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+" Set no max file limit
+"let g:ctrlp_max_files = 0
+" Search from current directory instead of project root
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_regexp = 1
+let g:ctrlp_custom_ignore = 'node_modules\|target\|git'
 
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
@@ -127,10 +134,13 @@ vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
     \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
 omap s :normal vs<CR>
 
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
-let g:ctrlp_use_caching = 0
+"let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+"let g:ctrlp_use_caching = 0
 
 let g:airline_theme='powerlineish'
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_section_z=''
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = ''
