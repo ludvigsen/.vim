@@ -44,11 +44,24 @@ Bundle "terryma/vim-expand-region"
 Bundle "mileszs/ack.vim"
 Bundle "bling/vim-airline"
 Bundle "Valloric/YouCompleteMe"
+Bundle "SirVer/ultisnips"
+Bundle 'honza/vim-snippets'
 Bundle "kien/ctrlp.vim"
+Bundle "chaquotay/ftl-vim-syntax"
+"Bundle "vim-scripts/LustyJuggler"
 
 let g:sneak#streak = 1
 
 au BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=handlebars
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<c-e>"
+let g:UltiSnipsListSnippets ="<c-l>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 
 set encoding=utf8
 filetype plugin indent on     " required!
@@ -114,15 +127,14 @@ unmap <C-p>
 nmap <C-n> :bnext<cr>
 nmap <C-p> :bprevious<cr>
 
+
+"CtrlP
 nnorema <Leader>o :CtrlP<CR>
 nnorema <Leader>e :CtrlPBuffer<CR>
 nnorema <Leader>m :CtrlPMixed<CR>
+let g:ctrlp_regexp = 1
 nnoremap <Leader>w :w<CR>
 nmap <Leader><Leader> V
-"let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
-" Set no max file limit
-"let g:ctrlp_max_files = 0
-" Search from current directory instead of project root
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_regexp = 1
 let g:ctrlp_custom_ignore = 'node_modules\|target\|git'
@@ -134,9 +146,6 @@ vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
     \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
 omap s :normal vs<CR>
 
-"let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
-"let g:ctrlp_use_caching = 0
-
 let g:airline_theme='powerlineish'
 let g:airline_left_sep=''
 let g:airline_right_sep=''
@@ -144,3 +153,5 @@ let g:airline_section_z=''
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = ''
+
+let g:EclimCompletionMethod = 'omnifunc'
