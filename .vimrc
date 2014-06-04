@@ -123,13 +123,15 @@ nmap <leader>p pV`]=
 "nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank    history/yank<cr>
 "nnoremap <leader>e :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr>
 "nnoremap <leader>g :<C-u>Unite -no-split grep:.<cr>
-unmap <C-p>
+"unmap <C-p>
 nmap <C-n> :bnext<cr>
 nmap <C-p> :bprevious<cr>
 
 
 "CtrlP
-nnorema <Leader>o :CtrlP<CR>
+"nnorema <Leader>o :CtrlP<CR>
+let g:ctrlp_map = '<Leader>o'
+let g:ctrlp_cmd = 'CtrlP'
 nnorema <Leader>e :CtrlPBuffer<CR>
 nnorema <Leader>m :CtrlPMixed<CR>
 let g:ctrlp_regexp = 1
