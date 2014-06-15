@@ -90,7 +90,7 @@ match RedundantWhitespace /\s\+$\|\t/
 "hi Normal ctermbg=White ctermfg=Black guifg=Black guibg=White
 set background=light
 let g:solarized_termcolors=256
-colo solarized
+colo molokai
 
 ""
 "" Joining
