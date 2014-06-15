@@ -48,6 +48,7 @@ Bundle "SirVer/ultisnips"
 Bundle 'honza/vim-snippets'
 Bundle "kien/ctrlp.vim"
 Bundle "chaquotay/ftl-vim-syntax"
+Bundle "zeis/vim-kolor"
 "Bundle "vim-scripts/LustyJuggler"
 
 let g:sneak#streak = 1
@@ -87,7 +88,7 @@ match RedundantWhitespace /\s\+$\|\t/
 
 "COLORS
 "hi Normal ctermbg=White ctermfg=Black guifg=Black guibg=White
-set background=dark
+set background=light
 let g:solarized_termcolors=256
 colo solarized
 
