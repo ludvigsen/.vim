@@ -48,6 +48,7 @@ Bundle "SirVer/ultisnips"
 Bundle 'honza/vim-snippets'
 Bundle "kien/ctrlp.vim"
 Bundle "chaquotay/ftl-vim-syntax"
+Bundle "zeis/vim-kolor"
 "Bundle "vim-scripts/LustyJuggler"
 
 let g:sneak#streak = 1
@@ -87,9 +88,9 @@ match RedundantWhitespace /\s\+$\|\t/
 
 "COLORS
 "hi Normal ctermbg=White ctermfg=Black guifg=Black guibg=White
-set background=dark
+set background=light
 let g:solarized_termcolors=256
-colo solarized
+colo molokai
 
 ""
 "" Joining
@@ -123,6 +124,7 @@ nmap <leader>p pV`]=
 "nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank    history/yank<cr>
 "nnoremap <leader>e :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr>
 "nnoremap <leader>g :<C-u>Unite -no-split grep:.<cr>
+"unmap <C-p>
 nmap <C-n> :bnext<cr>
 nnoremap <C-p> :bprevious<cr>
 
@@ -130,7 +132,6 @@ nnoremap <C-p> :bprevious<cr>
 "CtrlP
 let g:ctrlp_map = '<Leader>o'
 let g:ctrlp_cmd = 'CtrlP'
-"nnorema <Leader>o :CtrlP<CR>
 nnorema <Leader>e :CtrlPBuffer<CR>
 nnorema <Leader>m :CtrlPMixed<CR>
 let g:ctrlp_regexp = 1
