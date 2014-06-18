@@ -58,9 +58,9 @@ au BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=handlebars
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<c-e>"
-let g:UltiSnipsListSnippets ="<c-l>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsListSnippets ="<Leader>l<Leader>s"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
@@ -110,7 +110,7 @@ set nojoinspaces
 " Use the OS clipboard by default
 set clipboard=unnamed
 " Copy to X11 primary clipboard
-map <leader>y "*y
+map <leader>y "+y
 " Paste from unnamed register and fix indentation
 nmap <leader>p pV`]=
 
@@ -127,11 +127,10 @@ nmap <leader>p pV`]=
 "nnoremap <leader>g :<C-u>Unite -no-split grep:.<cr>
 "unmap <C-p>
 nmap <C-n> :bnext<cr>
-nmap <C-p> :bprevious<cr>
+nnoremap <C-p> :bprevious<cr>
 
 
 "CtrlP
-"nnorema <Leader>o :CtrlP<CR>
 let g:ctrlp_map = '<Leader>o'
 let g:ctrlp_cmd = 'CtrlP'
 nnorema <Leader>e :CtrlPBuffer<CR>
