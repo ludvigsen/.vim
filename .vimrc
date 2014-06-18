@@ -49,6 +49,7 @@ Bundle 'honza/vim-snippets'
 Bundle "kien/ctrlp.vim"
 Bundle "chaquotay/ftl-vim-syntax"
 Bundle "zeis/vim-kolor"
+Bundle "junegunn/seoul256.vim"
 "Bundle "vim-scripts/LustyJuggler"
 
 let g:sneak#streak = 1
@@ -88,9 +89,9 @@ match RedundantWhitespace /\s\+$\|\t/
 
 "COLORS
 "hi Normal ctermbg=White ctermfg=Black guifg=Black guibg=White
-set background=light
+set background=dark
 let g:solarized_termcolors=256
-colo molokai
+colo seoul256
 
 ""
 "" Joining
