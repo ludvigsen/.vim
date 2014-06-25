@@ -54,6 +54,11 @@ Bundle "tpope/vim-surround"
 Bundle "tpope/vim-commentary"
 Bundle "tpope/vim-sensible"
 Bundle "AndrewRadev/splitjoin.vim"
+Bundle "pangloss/vim-javascript"
+Bundle "othree/javascript-libraries-syntax.vim"
+Bundle "matthewsimo/angular-vim-snippets"
+Bundle "claco/jasmine.vim"
+Bundle "burnettk/vim-angular"
 "Bundle "vim-scripts/LustyJuggler"
 
 let g:sneak#streak = 1
