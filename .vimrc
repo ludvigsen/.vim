@@ -62,6 +62,7 @@ Bundle "burnettk/vim-angular"
 Bundle "Twinside/vim-hoogle"
 "Bundle "vim-scripts/LustyJuggler"
 Bundle "eagletmt/neco-ghc"
+Bundle "nanotech/jellybeans.vim"
 let g:ycm_semantic_triggers = {'haskell' : ['.']}
 autocmd BufRead,BufNewFile   *.hs setlocal omnifunc=necoghc#omnifunc
 
@@ -104,7 +105,8 @@ match RedundantWhitespace /\s\+$\|\t/
 "hi Normal ctermbg=White ctermfg=Black guifg=Black guibg=White
 set background=dark
 let g:solarized_termcolors=256
-colo seoul256
+"colo seoul256
+colo jellybeans
 
 ""
 "" Joining
@@ -171,3 +173,7 @@ let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = ''
 
 let g:EclimCompletionMethod = 'omnifunc'
+
+" Disable Background Color Erase (BCE) so that color scheme work
+" properly when Vim is used inside tmux and GNU screen.
+set t_ut=
