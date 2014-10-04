@@ -26,6 +26,7 @@ let g:syntastic_javascript_checkers = ['jslint']
 Bundle "lukerandall/haskellmode-vim"
 let g:haddock_browser="/usr/bin/chromium"
 
+Bundle "mxw/vim-jsx"
 Bundle "Shougo/vimproc.vim"
 Bundle "eagletmt/ghcmod-vim"
 Bundle "tomasr/molokai"
@@ -54,6 +55,7 @@ Bundle "tpope/vim-surround"
 Bundle "tpope/vim-commentary"
 Bundle "tpope/vim-sensible"
 Bundle "AndrewRadev/splitjoin.vim"
+Bundle "pbrisbin/vim-syntax-shakespeare"
 Bundle "pangloss/vim-javascript"
 Bundle "othree/javascript-libraries-syntax.vim"
 Bundle "matthewsimo/angular-vim-snippets"
@@ -167,3 +169,5 @@ let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = ''
 
 let g:EclimCompletionMethod = 'omnifunc'
+
+au BufNewFile,BufRead *.ejs set filetype=html
