@@ -26,7 +26,6 @@ let g:syntastic_javascript_checkers = ['jslint']
 Bundle "lukerandall/haskellmode-vim"
 let g:haddock_browser="/usr/bin/chromium"
 
-Bundle "mxw/vim-jsx"
 Bundle "Shougo/vimproc.vim"
 Bundle "eagletmt/ghcmod-vim"
 Bundle "tomasr/molokai"
@@ -55,13 +54,16 @@ Bundle "tpope/vim-surround"
 Bundle "tpope/vim-commentary"
 Bundle "tpope/vim-sensible"
 Bundle "AndrewRadev/splitjoin.vim"
-Bundle "pbrisbin/vim-syntax-shakespeare"
 Bundle "pangloss/vim-javascript"
 Bundle "othree/javascript-libraries-syntax.vim"
 Bundle "matthewsimo/angular-vim-snippets"
 Bundle "claco/jasmine.vim"
 Bundle "burnettk/vim-angular"
+Bundle "Twinside/vim-hoogle"
 "Bundle "vim-scripts/LustyJuggler"
+Bundle "eagletmt/neco-ghc"
+let g:ycm_semantic_triggers = {'haskell' : ['.']}
+autocmd BufRead,BufNewFile   *.hs setlocal omnifunc=necoghc#omnifunc
 
 let g:sneak#streak = 1
 
@@ -169,5 +171,3 @@ let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = ''
 
 let g:EclimCompletionMethod = 'omnifunc'
-
-au BufNewFile,BufRead *.ejs set filetype=html
