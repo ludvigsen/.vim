@@ -23,6 +23,9 @@ let g:NERDTreeDirArrows=0
 nnoremap 99 :NERDTreeToggle<CR>
 Bundle "scrooloose/syntastic"
 let g:syntastic_javascript_checkers = ['jslint']
+let g:syntastic_ruby_checker = "rubocop"
+let g:syntastic_eruby_ruby_exec = "rubocop"
+
 Bundle "lukerandall/haskellmode-vim"
 let g:haddock_browser="/usr/bin/chromium"
 
@@ -63,7 +66,7 @@ Bundle "Twinside/vim-hoogle"
 "Bundle "vim-scripts/LustyJuggler"
 Bundle "eagletmt/neco-ghc"
 Bundle "nanotech/jellybeans.vim"
-let g:ycm_semantic_triggers = {'haskell' : ['.']}
+
 autocmd BufRead,BufNewFile   *.hs setlocal omnifunc=necoghc#omnifunc
 
 let g:sneak#streak = 1
@@ -177,3 +180,8 @@ let g:EclimCompletionMethod = 'omnifunc'
 " Disable Background Color Erase (BCE) so that color scheme work
 " properly when Vim is used inside tmux and GNU screen.
 set t_ut=
+
+"" TabLength
+set ts=2 sw=2
+
+let g:ycm_semantic_triggers = {'haskell' : ['.']}
