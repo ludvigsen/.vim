@@ -1,8 +1,19 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
+filetype plugin indent on     " required!
+
+set history=1000
+set directory=$HOME/.vimswap//
+set backupdir=$HOME/.vimbackup//
+set viewdir=$HOME/.vimviews//
+silent execute '!mkdir -p $HOME/.vimbackup'
+silent execute '!mkdir -p $HOME/.vimswap'
+silent execute '!mkdir -p $HOME/.vimviews'
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
+
+
 
 " let Vundle manage Vundle
 " required! 
@@ -28,6 +39,20 @@ let g:syntastic_eruby_ruby_exec = "rubocop"
 
 Bundle "lukerandall/haskellmode-vim"
 let g:haddock_browser="/usr/bin/chromium"
+
+Bundle "raichoo/haskell-vim"
+let g:haskell_enable_quantification = 1 "to enable highlighting of forall
+let g:haskell_enable_recursivedo = 1 "to enable highlighting of mdo and rec
+let g:haskell_enable_arrowsyntax = 1 "to enable highlighting of proc
+let g:haskell_enable_pattern_synonyms = 1 "to enable highlighting of pattern
+let g:haskell_enable_typeroles = 1 "to enable highlighting of type roles
+let g:haskell_indent_if = 3
+let g:haskell_indent_case = 5
+let g:haskell_indent_let = 4
+let g:haskell_indent_where = 6
+let g:haskell_indent_do = 3
+let g:haskell_indent_in = 1
+
 
 Bundle "Shougo/vimproc.vim"
 Bundle "eagletmt/ghcmod-vim"
@@ -83,7 +108,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsEditSplit="vertical"
 
 set encoding=utf8
-filetype plugin indent on     " required!
 
 syntax on
 
