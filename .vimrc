@@ -62,11 +62,15 @@ Bundle 'nono/vim-handlebars'
 Bundle "kingbin/vim-arduino"
 Bundle "tpope/vim-fireplace"
 Bundle "tpope/vim-classpath"
+Bundle "tpope/vim-obsession"
 Bundle "guns/vim-clojure-static"
 "Bundle "scrooloose/nerdcommenter"
 Bundle "digitaltoad/vim-jade"
 Bundle "Shougo/unite.vim"
+
 Bundle "justinmk/vim-sneak"
+let g:sneak#streak = 1
+
 Bundle "tpope/vim-fugitive"
 Bundle "terryma/vim-expand-region"
 Bundle "mileszs/ack.vim"
