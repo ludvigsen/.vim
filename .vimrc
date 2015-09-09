@@ -1,3 +1,4 @@
+execute pathogen#infect()
 syntax on
 filetype on                   " required!
 filetype plugin indent on     " required!
@@ -54,6 +55,10 @@ let g:haskell_indent_where = 6
 let g:haskell_indent_do = 3
 let g:haskell_indent_in = 1
 
+Bundle "lambdatoast/elm.vim"
+nnoremap <leader>ll :ElmEvalLine<CR>
+vnoremap <leader>ls :<C-u>ElmEvalSelection<CR>
+nnoremap <leader>lm :ElmMakeCurrentFile<CR>
 
 Bundle "tpope/vim-abolish"
 Bundle "Shougo/vimproc.vim"
