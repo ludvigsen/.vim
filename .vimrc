@@ -1,5 +1,5 @@
-set nocompatible               " be iMproved
-filetype off                   " required!
+syntax on
+filetype on                   " required!
 filetype plugin indent on     " required!
 
 set history=1000
@@ -33,9 +33,10 @@ Bundle "scrooloose/nerdtree"
 let g:NERDTreeDirArrows=0
 nnoremap 99 :NERDTreeToggle<CR>
 Bundle "scrooloose/syntastic"
-let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_checkers = ['jsxhint']
 let g:syntastic_ruby_checker = "rubocop"
 let g:syntastic_eruby_ruby_exec = "rubocop"
+let g:syntastic_scss_checkers = ['scss_lint']
 
 Bundle "lukerandall/haskellmode-vim"
 let g:haddock_browser="/usr/bin/chromium"
@@ -54,6 +55,7 @@ let g:haskell_indent_do = 3
 let g:haskell_indent_in = 1
 
 
+Bundle "tpope/vim-abolish"
 Bundle "Shougo/vimproc.vim"
 Bundle "eagletmt/ghcmod-vim"
 Bundle "tomasr/molokai"
@@ -95,6 +97,7 @@ Bundle "Twinside/vim-hoogle"
 "Bundle "vim-scripts/LustyJuggler"
 Bundle "eagletmt/neco-ghc"
 Bundle "nanotech/jellybeans.vim"
+Bundle "mxw/vim-jsx"
 
 autocmd BufRead,BufNewFile   *.hs setlocal omnifunc=necoghc#omnifunc
 
@@ -113,7 +116,6 @@ let g:UltiSnipsEditSplit="vertical"
 
 set encoding=utf8
 
-syntax on
 
 set number
 
