@@ -34,7 +34,7 @@ Bundle "scrooloose/nerdtree"
 let g:NERDTreeDirArrows=0
 nnoremap 99 :NERDTreeToggle<CR>
 Bundle "scrooloose/syntastic"
-let g:syntastic_javascript_checkers = ['jsxhint']
+let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_ruby_checker = "rubocop"
 let g:syntastic_eruby_ruby_exec = "rubocop"
 let g:syntastic_scss_checkers = ['scss_lint']
@@ -103,6 +103,12 @@ Bundle "Twinside/vim-hoogle"
 Bundle "eagletmt/neco-ghc"
 Bundle "nanotech/jellybeans.vim"
 Bundle "mxw/vim-jsx"
+Bundle "sjl/gundo.vim"
+nnoremap 88 :GundoToggle<CR>
+set undodir=~/.vim/undodir
+set undofile
+set undolevels=10000 "maximum number of changes that can be undone
+set undoreload=100000 "maximum number lines to save for undo on a buffer reload
 
 autocmd BufRead,BufNewFile   *.hs setlocal omnifunc=necoghc#omnifunc
 
