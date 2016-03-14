@@ -46,6 +46,7 @@ NeoBundleLazy '1995eaton/vim-better-javascript-completion',{'autoload':{'filetyp
 NeoBundleLazy 'kchmck/vim-coffee-script',{'autoload':{'filetypes':['coffee']}}
 NeoBundleLazy 'hail2u/vim-css3-syntax',{'autoload':{'filetypes':['css','scss']}}
 NeoBundleLazy 'elzr/vim-json', {'autoload':{'filetypes':['json']}}
+NeoBundle 'bfredl/nvim-ipy'
 NeoBundle 'tpope/vim-markdown'
 NeoBundle 'dhruvasagar/vim-table-mode'
 NeoBundle 'suan/vim-instant-markdown'
@@ -146,6 +147,7 @@ NeoBundle "tpope/vim-fugitive"
 NeoBundle "terryma/vim-expand-region"
 NeoBundle "mileszs/ack.vim"
 NeoBundle "vim-airline/vim-airline"
+NeoBundle "rust-lang/rust.vim"
 NeoBundle "vim-airline/vim-airline-themes"
 let g:airline#extensions#tabline#enabled = 1
 set hidden
@@ -437,3 +439,13 @@ let g:EclimJavaSearchSingleResult = 'edit'
 "noremap  <buffer> <silent> $ g$
 "onoremap <silent> j gj
 "onoremap <silent> k gk
+if has("nvim")
+  " Open terminal and run lein figwheel
+  nmap <Leader>term <C-w>v:terminal<CR>lein figwheel<CR><C-\><C-n><C-w>p
+  " Evaluate anything from the visual mode in the next window
+  vmap <buffer> ,e y<C-w>wpi<CR><C-\><C-n><C-w>p
+  " Evaluate outer most form
+  nmap <buffer> ,e ^v%,e
+  " Evaluate buffer"
+  nmap <buffer> ,b ggVG,e
+endif
