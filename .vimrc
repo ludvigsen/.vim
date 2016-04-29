@@ -55,6 +55,8 @@ NeoBundle "othree/html5.vim"
 NeoBundle "mxw/vim-jsx"
 NeoBundle 'nono/vim-handlebars'
 NeoBundle "digitaltoad/vim-jade"
+NeoBundle "Quramy/tsuquyomi"
+NeoBundle "leafgarland/typescript-vim"
 
 NeoBundle "scrooloose/nerdtree"
 let g:NERDTreeDirArrows=0
@@ -69,6 +71,9 @@ nnoremap 99 :NERDTreeToggle<CR>
 "
 NeoBundle 'benekastah/neomake'
 let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_typescript_tsc_maker = {
+    \ 'args': ['--target', 'ES6'] }
+autocmd! BufWritePost,BufEnter * Neomake
 "function! neomake#makers#ft#javascript#eslint()
 "  return {
 "        \ 'args': ['-f', 'compact'],
@@ -197,7 +202,7 @@ NeoBundle "tpope/vim-sensible"
 NeoBundle "AndrewRadev/splitjoin.vim"
 NeoBundle "pangloss/vim-javascript"
 NeoBundle "moll/vim-node"
-NeoBundle "othree/javascript-libraries-syntax.vim"
+"NeoBundle "othree/javascript-libraries-syntax.vim"
 NeoBundle "claco/jasmine.vim"
 NeoBundle "Twinside/vim-hoogle"
 "NeoBundle "vim-scripts/LustyJuggler"
@@ -206,7 +211,9 @@ NeoBundle "nanotech/jellybeans.vim"
 NeoBundle "sjl/gundo.vim"
 NeoBundle 'othree/jspc.vim'
 NeoBundle 'marijnh/tern_for_vim', { 'do': 'npm install' }
+NeoBundle 'mhartington/deoplete-typescript'
 NeoBundle 'Shougo/deoplete.nvim'
+
 set runtimepath+=~/.vim/plugged/deoplete.nvim/
 let g:neosnippet#enable_completed_snippet = 1
 let g:deoplete#enable_at_startup = 1
